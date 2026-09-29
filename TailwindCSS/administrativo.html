@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Administrativo - Portal Universitario (Tailwind)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-gray-100 flex flex-col min-vh-100 text-gray-800">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="bg-slate-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-14">
+            <a href="index.html" class="font-bold text-base flex items-center gap-2">
+                <i class="bi bi-bank text-amber-400"></i> Portal Universitario
+            </a>
+            <ul class="flex space-x-6 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-amber-400 transition">Inicio</a></li>
+                <li class="relative group">
+                    <button class="flex items-center text-amber-400 font-semibold py-4">
+                        Módulos <i class="bi bi-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute right-0 hidden group-hover:block w-48 bg-white text-gray-800 rounded-md shadow-xl py-2 z-50 border border-gray-100">
+                        <a href="docente.html" class="block px-4 py-2 text-xs hover:bg-blue-50 hover:text-blue-900">Módulo Docente</a>
+                        <a href="administrativo.html" class="block px-4 py-2 text-xs font-bold bg-emerald-50 text-emerald-900">Módulo Administrativo</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CABECERA DE MÓDULO -->
+    <div class="bg-white border-b py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-xl font-bold text-gray-900 flex items-center">
+                <i class="bi bi-building-fill-gear text-emerald-600 mr-2"></i> Gestión de Personal Administrativo
+            </h2>
+            <p class="text-xs text-gray-500">Directorio de dependencias, oficinas de soporte y unidades operativas.</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="max-w-7xl mx-auto my-8 px-4 flex-grow w-full">
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Tabla Administrativa (2 Columnas) -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-emerald-700 text-white px-4 py-3 flex justify-between items-center">
+                        <span class="text-sm font-semibold"><i class="bi bi-people-fill mr-2"></i> Directorio de Dependencias</span>
+                        <span class="bg-white/20 text-white text-xs font-bold px-2.5 py-0.5 rounded">Sede Central</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead class="bg-gray-50 text-gray-600 border-b">
+                                <tr>
+                                    <th class="p-3">ID Servidor</th>
+                                    <th class="p-3">Personal</th>
+                                    <th class="p-3">Oficina / Dependencia</th>
+                                    <th class="p-3">Cargo Institucional</th>
+                                    <th class="p-3">Turno</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr class="hover:bg-emerald-50/50">
+                                    <td class="p-3 font-bold text-gray-900">ADM-101</td>
+                                    <td class="p-3">Lucía Salazar</td>
+                                    <td class="p-3 text-gray-500">Secretaría Académica</td>
+                                    <td class="p-3">Encargada de Trámites</td>
+                                    <td class="p-3"><span class="bg-gray-200 text-gray-800 text-[10px] font-semibold px-2 py-0.5 rounded">Mañana</span></td>
+                                </tr>
+                                <tr class="hover:bg-emerald-50/50">
+                                    <td class="p-3 font-bold text-gray-900">ADM-102</td>
+                                    <td class="p-3">Jorge Ramírez</td>
+                                    <td class="p-3 text-gray-500">Unidad de Tesorería</td>
+                                    <td class="p-3">Especialista Financiero</td>
+                                    <td class="p-3"><span class="bg-gray-200 text-gray-800 text-[10px] font-semibold px-2 py-0.5 rounded">Mañana</span></td>
+                                </tr>
+                                <tr class="hover:bg-emerald-50/50">
+                                    <td class="p-3 font-bold text-gray-900">ADM-103</td>
+                                    <td class="p-3">Elena Gutiérrez</td>
+                                    <td class="p-3 text-gray-500">Oficina de TI y Sistemas</td>
+                                    <td class="p-3">Soporte Técnico Campus</td>
+                                    <td class="p-3"><span class="bg-slate-800 text-white text-[10px] font-semibold px-2 py-0.5 rounded">Tarde</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario (1 Columna) -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-slate-900 text-white px-4 py-3 font-semibold text-sm">
+                        <i class="bi bi-person-gear mr-2"></i> Registro de Personal
+                    </div>
+                    <form class="p-4 space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Nombre Completo</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-1.5 text-xs focus:ring-2 focus:ring-emerald-600 outline-none" placeholder="Ej. Lic. Pedro Castro">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Oficina Asignada</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1.5 text-xs focus:ring-2 focus:ring-emerald-600 outline-none">
+                                <option selected disabled>Seleccionar dependencia...</option>
+                                <option>Secretaría Académica</option>
+                                <option>Mesa de Partes</option>
+                                <option>Unidad de Posgrado</option>
+                                <option>Oficina de TI y Sistemas</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Turno de Atención</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1.5 text-xs focus:ring-2 focus:ring-emerald-600 outline-none">
+                                <option>Turno Mañana (08:00 - 16:00)</option>
+                                <option>Turno Tarde (14:00 - 22:00)</option>
+                            </select>
+                        </div>
+                        <button type="button" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2 rounded transition">
+                            Registrar Servidor
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white text-center py-4 mt-auto text-xs">
+        &copy; 2026 Universidad Nacional - Dirección de Personal
+    </footer>
+
+</body>
+</html>

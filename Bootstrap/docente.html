@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plana Docente - Portal Universitario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .bg-universitario { background-color: #0d233a; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-universitario shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-bank me-2"></i>Portal Universitario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUni">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuUni">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Módulos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="docente.html">Módulo Docente</a></li>
+                            <li><a class="dropdown-item" href="administrativo.html">Módulo Administrativo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CABECERA DE MÓDULO -->
+    <div class="bg-white border-bottom py-3 shadow-sm">
+        <div class="container">
+            <h3 class="fw-bold text-dark mb-1"><i class="bi bi-mortarboard-fill text-primary me-2"></i>Gestión de Plana Docente</h3>
+            <p class="text-muted small mb-0">Registro y padrón oficial de catedráticos ordinarios y contratados.</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <main class="container my-4 flex-grow-1">
+        <div class="row g-4">
+            
+            <!-- Tabla Académica -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-universitario text-white d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold"><i class="bi bi-journal-text me-2"></i>Padrón de Catedráticos</span>
+                        <span class="badge bg-warning text-dark">Facultad de Ingeniería</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light text-secondary">
+                                    <tr>
+                                        <th>Cód. Docente</th>
+                                        <th>Catedrático</th>
+                                        <th>Grado Académico</th>
+                                        <th>Asignatura Principal</th>
+                                        <th>Condición</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">DOC-20261</td>
+                                        <td>Dr. Carlos Mendoza</td>
+                                        <td>Doctor en Cs. de la Computación</td>
+                                        <td>Algoritmos y Programación</td>
+                                        <td><span class="badge bg-primary">Nombrado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">DOC-20262</td>
+                                        <td>Mg. María Fernández</td>
+                                        <td>Magíster en Ing. de Software</td>
+                                        <td>Base de Datos I</td>
+                                        <td><span class="badge bg-info text-dark">Contratado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">DOC-20263</td>
+                                        <td>Ing. Roberto Gómez</td>
+                                        <td>Licenciado en Sistemas</td>
+                                        <td>Sistemas Operativos</td>
+                                        <td><span class="badge bg-info text-dark">Contratado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario Universitario -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white fw-semibold">
+                        <i class="bi bi-person-plus-fill me-2"></i>Registro de Docente
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Nombres y Apellidos</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Ej. Dr. Juan Pérez">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Grado Académico</label>
+                                <select class="form-select form-select-sm">
+                                    <option selected disabled>Seleccione grado...</option>
+                                    <option>Doctorado</option>
+                                    <option>Maestría</option>
+                                    <option>Licenciatura / Titulado</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Asignatura a Cargo</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Ej. Redes de Datos">
+                            </div>
+                            <button type="button" class="btn btn-primary w-100 btn-sm fw-semibold">Registrar en Padrón</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-universitario text-white text-center py-3 mt-auto">
+        <small>&copy; 2026 Universidad Nacional - Gestión Académica</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
