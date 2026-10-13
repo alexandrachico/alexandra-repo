@@ -1,0 +1,158 @@
+:root {
+  --verde: #0f3d33;
+  --verde-claro: #1d7a68;
+  --oro: #c8a24a;
+  --texto: #24302c;
+  --suave: #6d7a74;
+  --linea: #e4e2da;
+  --crema: #f7f5f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--crema);
+  color: var(--texto);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15, 61, 51, 0.08);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  color: var(--verde);
+}
+
+.subtitulo {
+  margin: 0 0 20px;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.campo label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--texto);
+  background-color: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--verde-claro);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(29, 122, 104, 0.14);
+}
+
+.campo.invalido input,
+.campo.invalido textarea {
+  border-color: #c0392b;
+  background-color: #fdf3f2;
+}
+
+.error {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #c0392b;
+}
+
+button {
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  background-color: var(--oro);
+  color: var(--verde);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #e7cf92;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+#mensaje-estado {
+  display: none;
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+}
+
+#mensaje-estado.exito {
+  display: block;
+  background-color: #e8f6ef;
+  border-color: #b6e0cd;
+  color: #17604a;
+}
+
+#mensaje-estado.error {
+  display: block;
+  background-color: #fdecea;
+  border-color: #f3c4bd;
+  color: #a23222;
+}
+
+#mensaje-estado.advertencia {
+  display: block;
+  background-color: #fdf6e3;
+  border-color: #ecd9a0;
+  color: #7a5a12;
+}
+
+@media (max-width: 520px) {
+  .tarjeta {
+    padding: 20px;
+  }
+}
