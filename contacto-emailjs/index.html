@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envío de Correos con EmailJS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
     <!-- SDK de EmailJS -->
@@ -11,48 +16,70 @@
 </head>
 <body>
 
+    <div class="fondo" aria-hidden="true">
+        <span class="burbuja burbuja-1"></span>
+        <span class="burbuja burbuja-2"></span>
+        <span class="burbuja burbuja-3"></span>
+    </div>
+
     <main class="tarjeta">
-        <h1>Enviar Correo</h1>
-        <p class="subtitulo">
-            Completa los datos y el mensaje llegará al correo indicado en
-            <strong>Destinatario</strong>.
-        </p>
+        <header class="cabecera">
+            <span class="emblema">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                    <path d="m3 6 9 6 9-6"></path>
+                </svg>
+            </span>
+            <h1>Envío de Correos</h1>
+            <p class="subtitulo">
+                Completa el formulario y el mensaje llegará al correo indicado en
+                <strong>Destinatario</strong>.
+            </p>
+        </header>
 
         <form id="contact-form" novalidate>
-            <div class="campo" data-campo="from_name">
-                <label for="from_name">Nombre</label>
-                <input type="text" id="from_name" name="from_name" placeholder="Tu nombre completo">
-                <small class="error"></small>
-            </div>
+            <div class="rejilla">
+                <div class="campo" data-campo="from_name">
+                    <label for="from_name">Nombre</label>
+                    <input type="text" id="from_name" name="from_name" placeholder="Tu nombre completo" autocomplete="name">
+                    <small class="error"></small>
+                </div>
 
-            <div class="campo" data-campo="reply_to">
-                <label for="reply_to">Correo</label>
-                <input type="email" id="reply_to" name="reply_to" placeholder="tucorreo@ejemplo.com">
-                <small class="error"></small>
-            </div>
+                <div class="campo" data-campo="reply_to">
+                    <label for="reply_to">Correo</label>
+                    <input type="email" id="reply_to" name="reply_to" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+                    <small class="error"></small>
+                </div>
 
-            <div class="campo" data-campo="to_email">
-                <label for="to_email">Destinatario</label>
-                <input type="email" id="to_email" name="to_email" placeholder="destino@ejemplo.com">
-                <small class="error"></small>
-            </div>
+                <div class="campo" data-campo="to_email">
+                    <label for="to_email">Destinatario</label>
+                    <input type="email" id="to_email" name="to_email" placeholder="destino@ejemplo.com">
+                    <small class="error"></small>
+                </div>
 
-            <div class="campo" data-campo="subject">
-                <label for="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" placeholder="Motivo del mensaje">
-                <small class="error"></small>
+                <div class="campo" data-campo="subject">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" placeholder="Motivo del mensaje">
+                    <small class="error"></small>
+                </div>
             </div>
 
             <div class="campo" data-campo="message">
                 <label for="message">Mensaje</label>
-                <textarea id="message" name="message" placeholder="Escribe tu mensaje (mínimo 10 caracteres)"></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje (mínimo 10 caracteres)"></textarea>
                 <small class="error"></small>
             </div>
 
-            <button type="submit" id="boton-enviar">Enviar</button>
+            <button type="submit" id="boton-enviar">Enviar mensaje</button>
 
             <p id="mensaje-estado" role="alert"></p>
         </form>
+
+        <footer class="pie">
+            <span>Impulsado por EmailJS</span>
+            <span class="punto"></span>
+            <span>Respuesta directa al remitente</span>
+        </footer>
     </main>
 
     <script src="config.js"></script>

@@ -131,7 +131,7 @@
       })
       .finally(function () {
         boton.disabled = false
-        boton.textContent = 'Enviar'
+        boton.textContent = 'Enviar mensaje'
       })
   })
 })()
